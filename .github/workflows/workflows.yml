@@ -13,16 +13,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Chrome browser
-        run: |
-          choco install googlechrome --confirm  # Install Chrome using Chocolatey package manager
-          refreshenv  # Refresh environment variables to include newly installed software
+      - name: Clear Chocolatey cache
+        run: choco cache clean --all
 
-      - name: Set up ChromeDriver
-        run: |
-          choco install chromedriver --confirm  # Install ChromeDriver using Chocolatey
-          refreshenv  # Refresh environment variables to include newly installed software
-          chromedriver --version  # Verify ChromeDriver installation
+      - name: Install Google Chrome
+        run: choco install googlechrome --ignore-checksums
+
+      - name: Verify installed version
+        run: chrome --version  # or check the installed version in another way
 
       - name: Run tests
         run: |
