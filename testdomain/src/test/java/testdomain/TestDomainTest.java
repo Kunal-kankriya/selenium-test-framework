@@ -15,6 +15,7 @@ public class TestDomainTest extends Base {
 
     @Test(groups = {"Smoke"})
     public void testMethod1(){
+        System.out.println("TestDomain");
         TestDomain td=new TestDomain();
         test.info("Starting Smoke Test");
         td.firstMethod();
@@ -23,6 +24,7 @@ public class TestDomainTest extends Base {
 
     @Test(groups = {"Regression"})
     public void testMethod2(){
+        System.out.println("TestDomain");
         TestDomain td=new TestDomain();
         test.info("Starting Regression Test ");
         td.secondMethod();
@@ -30,6 +32,7 @@ public class TestDomainTest extends Base {
     }
     @Test(groups = {"Smoke","Regression"})
     public void testMethod3(){
+        System.out.println("TestDomain");
         TestDomain td=new TestDomain();
         test.info("Starting Smoke & Regressiom");
         td.thirdMethod();

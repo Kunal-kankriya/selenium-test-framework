@@ -13,14 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: |
-          mvn install  # Replace with your build command (e.g., npm, pip, etc.)
-
-      - name: Install dependencies
-        run: |
-          mvn install  # Replace with your build command (e.g., npm, pip, etc.)
-
       - name: Run tests
         run: |
-          mvn test     # Replace with your test command (e.g., npm, pytest, etc.)
+          mvn test
