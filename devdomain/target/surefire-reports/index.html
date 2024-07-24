@@ -118,12 +118,12 @@
                     <div class="method-list-content passed suite-devdomain">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-devdomain" title="devdomain.DevDomainTest2" class="method navigator-link" hash-for-method="testMethod1">testMethod1</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-devdomain" title="devdomain.DevDomainTest" class="method navigator-link" hash-for-method="testMethod1">testMethod1</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-devdomain" title="devdomain.DevDomainTest" class="method navigator-link" hash-for-method="testMethod1">testMethod1</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-devdomain" title="devdomain.DevDomainTest2" class="method navigator-link" hash-for-method="testMethod1">testMethod1</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -210,17 +210,13 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;devdomain&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
-  &lt;groups&gt;
-    &lt;run&gt;
-      &lt;include name=&quot;Smoke&quot;/&gt;
-    &lt;/run&gt;
-  &lt;/groups&gt;
-  &lt;groups&gt;
-    &lt;run&gt;
-      &lt;include name=&quot;Smoke&quot;/&gt;
-    &lt;/run&gt;
-  &lt;/groups&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Smoke Tests&quot; verbose=&quot;0&quot;&gt;
+    &lt;parameter name=&quot;env&quot; value=&quot;qa&quot;/&gt;
+    &lt;groups&gt;
+      &lt;run&gt;
+        &lt;include name=&quot;Smoke&quot;/&gt;
+      &lt;/run&gt;
+    &lt;/groups&gt;
     &lt;classes&gt;
       &lt;class name=&quot;devdomain.DevDomainTest&quot;/&gt;
       &lt;class name=&quot;devdomain.DevDomainTest2&quot;/&gt;
@@ -287,24 +283,24 @@ data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testMethod1')
 data.setCell(0, 2, 'devdomain.DevDomainTest')
-data.setCell(0, 3, 8);
+data.setCell(0, 3, 13);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'testMethod3')
 data.setCell(1, 2, 'devdomain.DevDomainTest2')
-data.setCell(1, 3, 7);
+data.setCell(1, 3, 6);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testMethod1')
-data.setCell(2, 2, 'devdomain.DevDomainTest2')
-data.setCell(2, 3, 2);
+data.setCell(2, 1, 'testMethod3')
+data.setCell(2, 2, 'devdomain.DevDomainTest')
+data.setCell(2, 3, 1);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testMethod3')
-data.setCell(3, 2, 'devdomain.DevDomainTest')
+data.setCell(3, 1, 'testMethod1')
+data.setCell(3, 2, 'devdomain.DevDomainTest2')
 data.setCell(3, 3, 1);
 window.suiteTableData['devdomain']= { tableData: data, tableDiv: 'times-div-devdomain'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 18 ms</span>
+              <span class="suite-total-time">Total running time: 21 ms</span>
               <div id="times-div-devdomain">
               </div> <!-- times-div-devdomain -->
             </div> <!-- times-div -->
@@ -351,20 +347,20 @@ return data;
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testMethod3</span>
-                <span class="method-start">10 ms</span>
+                <span class="method-start">17 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">devdomain.DevDomainTest2</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">testMethod1</span>
-                <span class="method-start">13 ms</span>
+                <span class="method-start">22 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">testMethod3</span>
-                <span class="method-start">16 ms</span>
+                <span class="method-start">23 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
