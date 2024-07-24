@@ -1,4 +1,4 @@
-name: CI/CD Pipeline Test devdomain
+name: CI/CD Pipeline Test for devdomain
 
 on:
   push:
@@ -7,25 +7,22 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest  # Use windows-latest for Windows environment
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
       - name: Set up Chrome browser
         run: |
-            sudo apt-get update
-            sudo apt-get install -y wget unzip libnss3 libglib2.0-0 libfontconfig1
-            wget -q -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-            sudo dpkg -i /tmp/chrome.deb || sudo apt-get -fy install
+          choco install googlechrome --confirm  # Install Chrome using Chocolatey package manager
+          refreshenv  # Refresh environment variables to include newly installed software
 
       - name: Set up ChromeDriver
         run: |
-            wget -q -O /tmp/chromedriver.zip https://chromedriver.storage.googleapis.com/$(wget -q -O - https://chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip
-            unzip /tmp/chromedriver.zip -d /tmp
-            sudo mv /tmp/chromedriver /usr/local/bin/
-            sudo chmod +x /usr/local/bin/chromedriver
-            chromedriver --version
+          choco install chromedriver --confirm  # Install ChromeDriver using Chocolatey
+          refreshenv  # Refresh environment variables to include newly installed software
+          chromedriver --version  # Verify ChromeDriver installation
 
       - name: Run tests
         run: |
