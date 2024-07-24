@@ -9,17 +9,17 @@ import org.testng.annotations.*;
 public class Base {
     protected ExtentReports extent;
     protected static ExtentTest test;
-    @BeforeSuite(alwaysRun = true)
+    @BeforeSuite(alwaysRun = false)
     public void beforeSuite() {
         String reportPath = System.getProperty("user.dir") + "/Report/ExtentReport.html";
         extent = Report.getInstance(reportPath,"Execution Report","Report Name");
     }
-    @BeforeMethod(alwaysRun = true)
+    @BeforeMethod(alwaysRun = false)
     public void beforeMethod() {
         test = extent.createTest(getClass().getSimpleName());
     }
 
-    @AfterMethod(alwaysRun = true)
+    @AfterMethod(alwaysRun = false)
     public void afterMethod(ITestResult result) {
         if (result.getStatus() == ITestResult.FAILURE) {
             test.log(Status.FAIL, "Test Case Failed: " + result.getName());

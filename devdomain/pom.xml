@@ -19,9 +19,7 @@
       <version>1.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
-  <profiles>
-    <profile>
-      <id>devdomain</id>
+
       <build>
         <plugins>
           <plugin>
@@ -29,13 +27,10 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <configuration>
               <suiteXmlFiles>
-                <suiteXmlFile>${basedir}testng.xml</suiteXmlFile>
-                <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
+                <suiteXmlFile>${basedir}/testng.xml</suiteXmlFile>
               </suiteXmlFiles>
             </configuration>
           </plugin>
         </plugins>
       </build>
-    </profile>
-  </profiles>
 </project>

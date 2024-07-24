@@ -6,8 +6,9 @@
 		</run>
 	</groups>
 	<test name="Smoke Tests">
-		<packages>
-			<package name="devdomain"></package>
-		</packages>
+		<classes>
+			<class name="devdomain.DevDomainTest"></class>
+			<class name="devdomain.DevDomainTest2"></class>
+		</classes>
 	</test>
 </suite>

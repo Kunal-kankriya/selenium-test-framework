@@ -17,25 +17,25 @@ public class TestDomainTest extends Base {
     public void testMethod1(){
         System.out.println("TestDomain");
         TestDomain td=new TestDomain();
-        test.info("Starting Smoke Test");
+       // test.info("Starting Smoke Test");
         td.firstMethod();
-        test.pass("Test passed");
+       // test.pass("Test passed");
     }
 
     @Test(groups = {"Regression"})
     public void testMethod2(){
         System.out.println("TestDomain");
         TestDomain td=new TestDomain();
-        test.info("Starting Regression Test ");
+      //  test.info("Starting Regression Test ");
         td.secondMethod();
-        test.pass("Test passed");
+      //  test.pass("Test passed");
     }
     @Test(groups = {"Smoke","Regression"})
     public void testMethod3(){
         System.out.println("TestDomain");
         TestDomain td=new TestDomain();
-        test.info("Starting Smoke & Regressiom");
+      //  test.info("Starting Smoke & Regressiom");
         td.thirdMethod();
-        test.pass("Test passed");
+      //  test.pass("Test passed");
     }
 }
