@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: devdomain.DevDomainTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.803 s -- in devdomain.DevDomainTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.735 s -- in devdomain.DevDomainTest
