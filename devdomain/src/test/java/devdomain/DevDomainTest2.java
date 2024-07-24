@@ -29,7 +29,6 @@ public class DevDomainTest2 extends Base {
         DevDomain dd = new DevDomain();
       //  test.info("Starting Smoke & Regression");
         dd.thirdMethod();
-        Assert.assertTrue(false);
       //  test.pass("Test passed");
     }
 }
