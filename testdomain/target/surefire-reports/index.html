@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,12 +104,22 @@
                     <div class="method-list-content passed suite-testdomain">
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-testdomain" title="testdomain.TestDomainTest2" class="method navigator-link" hash-for-method="testMethod1">testMethod1</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-testdomain" title="testdomain.TestDomainTest" class="method navigator-link" hash-for-method="testMethod1">testMethod1</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-testdomain" title="testdomain.TestDomainTest" class="method navigator-link" hash-for-method="testMethod3">testMethod3</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-testdomain" title="testdomain.TestDomainTest2" class="method navigator-link" hash-for-method="testMethod3">testMethod3</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-testdomain -->
@@ -124,6 +134,28 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-testdomain" class="panel testdomain">
+          <div class="suite-testdomain-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">testdomain.TestDomainTest2</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMethod1">
+                  </a> <!-- testMethod1 -->
+                  <span class="method-name">testMethod1</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMethod3">
+                  </a> <!-- testMethod3 -->
+                  <span class="method-name">testMethod3</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-testdomain-class-passed -->
           <div class="suite-testdomain-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -172,6 +204,7 @@
     &lt;/packages&gt;
     &lt;classes&gt;
       &lt;class name=&quot;testdomain.TestDomainTest&quot;/&gt;
+      &lt;class name=&quot;testdomain.TestDomainTest2&quot;/&gt;
       &lt;class name=&quot;testdomain.TestDomain&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Smoke Tests --&gt;
@@ -186,7 +219,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Smoke Tests (2 classes)</span>
+                <span class="test-name">Smoke Tests (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -232,20 +265,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testMethod1')
 data.setCell(0, 2, 'testdomain.TestDomainTest')
-data.setCell(0, 3, 6);
+data.setCell(0, 3, 8);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'testMethod3')
 data.setCell(1, 2, 'testdomain.TestDomainTest')
 data.setCell(1, 3, 1);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testMethod3')
+data.setCell(2, 2, 'testdomain.TestDomainTest2')
+data.setCell(2, 3, 1);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testMethod1')
+data.setCell(3, 2, 'testdomain.TestDomainTest2')
+data.setCell(3, 3, 0);
 window.suiteTableData['testdomain']= { tableData: data, tableDiv: 'times-div-testdomain'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 7 ms</span>
+              <span class="suite-total-time">Total running time: 10 ms</span>
               <div id="times-div-testdomain">
               </div> <!-- times-div-testdomain -->
             </div> <!-- times-div -->
@@ -260,9 +301,16 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-testdomain" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">1 ignored method</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">testdomain.TestDomainTest2</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">testMethod2</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
             <div class="ignored-class-div">
               <span class="ignored-class-name">testdomain.TestDomainTest</span>
               <div class="ignored-methods-div">
@@ -285,7 +333,18 @@ return data;
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testMethod3</span>
-                <span class="method-start">8 ms</span>
+                <span class="method-start">11 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">testdomain.TestDomainTest2</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">testMethod1</span>
+                <span class="method-start">17 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testMethod3</span>
+                <span class="method-start">18 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
