@@ -12,6 +12,9 @@
   <version>1.0-SNAPSHOT</version>
   <name>testdomain</name>
   <url>http://maven.apache.org</url>
+  <properties>
+  <parent.basedir>${project.basedir}</parent.basedir>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>main-project</groupId>

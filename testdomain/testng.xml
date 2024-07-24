@@ -1,13 +1,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="testdomain">
-	<groups>
-		<run>
-			<include name="Smoke"/>
-		</run>
-	</groups>
 	<test name="Smoke Tests">
-		<packages>
-			<package name="testdomain"></package>
-		</packages>
+		<parameter name="env" value="qa" />
+		<parameter name="browser" value="chrome" />
+		<groups>
+			<run>
+				<include name="Smoke" />
+			</run>
+		</groups>
+		<classes>
+			<class name="testdomain.LoginTest" />
+			<!--class name="testdomain.TestDomainTest2" /-->
+		</classes>
 	</test>
 </suite>
