@@ -2,31 +2,80 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-24T13:08:59 IST" name="Surefire suite" finished-at="2024-07-24T13:08:59 IST" duration-ms="58">
+  <suite started-at="2024-07-24T16:24:25 IST" name="Surefire suite" finished-at="2024-07-24T16:24:25 IST" duration-ms="55">
     <groups>
       <group name="Regression">
-        <method signature="DevDomainTest.testMethod2()[pri:0, instance:devdomain.DevDomainTest@1d548a08]" name="testMethod2" class="devdomain.DevDomainTest"/>
-        <method signature="DevDomainTest.testMethod3()[pri:0, instance:devdomain.DevDomainTest@1d548a08]" name="testMethod3" class="devdomain.DevDomainTest"/>
+        <method signature="DevDomainTest.testMethod2()[pri:0, instance:devdomain.DevDomainTest@6e75aa0d]" name="testMethod2" class="devdomain.DevDomainTest"/>
+        <method signature="DevDomainTest.testMethod3()[pri:0, instance:devdomain.DevDomainTest@6e75aa0d]" name="testMethod3" class="devdomain.DevDomainTest"/>
       </group> <!-- Regression -->
       <group name="Smoke">
-        <method signature="DevDomainTest.testMethod1()[pri:0, instance:devdomain.DevDomainTest@1d548a08]" name="testMethod1" class="devdomain.DevDomainTest"/>
-        <method signature="DevDomainTest.testMethod3()[pri:0, instance:devdomain.DevDomainTest@1d548a08]" name="testMethod3" class="devdomain.DevDomainTest"/>
+        <method signature="DevDomainTest.testMethod1()[pri:0, instance:devdomain.DevDomainTest@6e75aa0d]" name="testMethod1" class="devdomain.DevDomainTest"/>
+        <method signature="DevDomainTest.testMethod3()[pri:0, instance:devdomain.DevDomainTest@6e75aa0d]" name="testMethod3" class="devdomain.DevDomainTest"/>
       </group> <!-- Smoke -->
     </groups>
-    <test started-at="2024-07-24T13:08:59 IST" name="Surefire test" finished-at="2024-07-24T13:08:59 IST" duration-ms="58">
+    <test started-at="2024-07-24T16:24:25 IST" name="Surefire test" finished-at="2024-07-24T16:24:25 IST" duration-ms="55">
       <class name="devdomain.DevDomainTest">
-        <test-method signature="testMethod1()[pri:0, instance:devdomain.DevDomainTest@1d548a08]" started-at="2024-07-24T13:08:59 IST" name="testMethod1" finished-at="2024-07-24T13:08:59 IST" duration-ms="11" status="PASS">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:devdomain.DevDomainTest@6e75aa0d]" started-at="2024-07-24T16:24:24 IST" name="beforeSuite" finished-at="2024-07-24T16:24:25 IST" duration-ms="234" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:devdomain.DevDomainTest@6e75aa0d]" started-at="2024-07-24T16:24:25 IST" name="beforeMethod" finished-at="2024-07-24T16:24:25 IST" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testMethod1()[pri:0, instance:devdomain.DevDomainTest@6e75aa0d]" started-at="2024-07-24T16:24:25 IST" name="testMethod1" finished-at="2024-07-24T16:24:25 IST" duration-ms="7" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMethod1 -->
-        <test-method signature="testMethod2()[pri:0, instance:devdomain.DevDomainTest@1d548a08]" started-at="2024-07-24T13:08:59 IST" name="testMethod2" finished-at="2024-07-24T13:08:59 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:devdomain.DevDomainTest@6e75aa0d]" started-at="2024-07-24T16:24:25 IST" name="afterMethod" finished-at="2024-07-24T16:24:25 IST" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testMethod1 status=SUCCESS method=DevDomainTest.testMethod1()[pri:0, instance:devdomain.DevDomainTest@6e75aa0d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:devdomain.DevDomainTest@6e75aa0d]" started-at="2024-07-24T16:24:25 IST" name="beforeMethod" finished-at="2024-07-24T16:24:25 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testMethod2()[pri:0, instance:devdomain.DevDomainTest@6e75aa0d]" started-at="2024-07-24T16:24:25 IST" name="testMethod2" finished-at="2024-07-24T16:24:25 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMethod2 -->
-        <test-method signature="testMethod3()[pri:0, instance:devdomain.DevDomainTest@1d548a08]" started-at="2024-07-24T13:08:59 IST" name="testMethod3" finished-at="2024-07-24T13:08:59 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:devdomain.DevDomainTest@6e75aa0d]" started-at="2024-07-24T16:24:25 IST" name="afterMethod" finished-at="2024-07-24T16:24:25 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testMethod2 status=SUCCESS method=DevDomainTest.testMethod2()[pri:0, instance:devdomain.DevDomainTest@6e75aa0d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:devdomain.DevDomainTest@6e75aa0d]" started-at="2024-07-24T16:24:25 IST" name="beforeMethod" finished-at="2024-07-24T16:24:25 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testMethod3()[pri:0, instance:devdomain.DevDomainTest@6e75aa0d]" started-at="2024-07-24T16:24:25 IST" name="testMethod3" finished-at="2024-07-24T16:24:25 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMethod3 -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:devdomain.DevDomainTest@6e75aa0d]" started-at="2024-07-24T16:24:25 IST" name="afterMethod" finished-at="2024-07-24T16:24:25 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testMethod3 status=SUCCESS method=DevDomainTest.testMethod3()[pri:0, instance:devdomain.DevDomainTest@6e75aa0d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
       </class> <!-- devdomain.DevDomainTest -->
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->

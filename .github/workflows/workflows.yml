@@ -15,13 +15,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install  # Replace with your build command (e.g., npm, pip, etc.)
+          mvn install  # Replace with your build command (e.g., npm, pip, etc.)
 
       - name: Run tests
         run: |
-          npm test     # Replace with your test command (e.g., npm, pytest, etc.)
-
-      - name: Deploy to Production
-        if: success()
-        run: |
-          ssh user@server 'bash -s' < deploy.sh
+          mvn test     # Replace with your test command (e.g., npm, pytest, etc.)
