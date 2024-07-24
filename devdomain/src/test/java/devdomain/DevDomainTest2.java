@@ -1,5 +1,6 @@
 package devdomain;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.Base;
 
@@ -25,6 +26,7 @@ public class DevDomainTest2 extends Base {
         DevDomain dd = new DevDomain();
         test.info("Starting Smoke & Regression");
         dd.thirdMethod();
+        Assert.fail();
         test.pass("Test passed");
     }
 }
