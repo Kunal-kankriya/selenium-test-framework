@@ -1,0 +1,27 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          npm install  # Replace with your build command (e.g., npm, pip, etc.)
+
+      - name: Run tests
+        run: |
+          npm test     # Replace with your test command (e.g., npm, pytest, etc.)
+
+      - name: Deploy to Production
+        if: success()
+        run: |
+          ssh user@server 'bash -s' < deploy.sh

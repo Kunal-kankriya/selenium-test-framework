@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MainProject Suite">
+	<test name="DevDomain Tests">
+		<packages>
+			<package name="devdomain"/>
+		</packages>
+	</test>
+	<test name="TestDomain Tests">
+		<packages>
+			<package name="testdomain"/>
+		</packages>
+	</test>
+</suite>
