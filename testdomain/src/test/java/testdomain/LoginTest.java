@@ -6,7 +6,6 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import utils.Base;
 import utils.Environment;
-import utils.EnvironmentUtils;
 
 public class LoginTest extends Base {
     Environment environment;
