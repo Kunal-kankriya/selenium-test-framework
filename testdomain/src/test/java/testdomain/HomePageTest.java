@@ -6,21 +6,22 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import utils.Base;
 import utils.Environment;
-import utils.EnvironmentUtils;
 
-public class LoginTest extends Base {
+public class HomePageTest extends Base {
     Environment environment;
+
     @Parameters({"env", "browser"})
     @BeforeClass(alwaysRun = true)
     public void startBrowser(String env, String browser) {
         environment = new Environment(env);
         driver = getDriver(environment.getUrl(), browser);
-    }
-
-    @Test(groups = {"Smoke"})
-    public void Login() {
-        Login login = new Login(driver);
+        Login login=new Login(driver);
         login.login(environment.getPersonalNumber(),environment.getPassword());
+    }
+    @Test(groups = {"Smoke"})
+    public void HomePage(){
+        HomePage homePage=new HomePage(driver);
+        homePage.homePage();
     }
     @AfterClass(alwaysRun = true)
     public void closeBrowser(){

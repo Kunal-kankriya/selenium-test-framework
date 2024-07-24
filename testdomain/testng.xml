@@ -10,7 +10,7 @@
 		</groups>
 		<classes>
 			<class name="testdomain.LoginTest" />
-			<!--class name="testdomain.TestDomainTest2" /-->
+			<class name="testdomain.HomePageTest" />
 		</classes>
 	</test>
 </suite>

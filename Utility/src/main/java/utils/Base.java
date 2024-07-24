@@ -14,6 +14,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
+import java.time.Duration;
+
 public class Base {
     protected ExtentReports extent;
     protected static ExtentTest test;
@@ -67,6 +69,7 @@ public class Base {
             }
             driver.get(url);
             driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(Duration.ofMillis(40000));
         }
 
         return driver;
