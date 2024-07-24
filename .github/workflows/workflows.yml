@@ -19,9 +19,6 @@ jobs:
       - name: Install Google Chrome
         run: choco install googlechrome --ignore-checksums
 
-      - name: Verify installed version
-        run: chrome --version  # or check the installed version in another way
-
       - name: Run tests
         run: |
           mvn clean test
