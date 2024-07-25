@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-24T21:50:42 IST" name="testdomain" finished-at="2024-07-24T21:50:50 IST" duration-ms="7727">
+  <suite started-at="2024-07-25T11:12:08 IST" name="testdomain" finished-at="2024-07-25T11:12:33 IST" duration-ms="24868">
     <groups>
       <group name="Smoke">
-        <method signature="LoginTest.Login()[pri:0, instance:testdomain.LoginTest@1139b2f3]" name="Login" class="testdomain.LoginTest"/>
+        <method signature="HomePageTest.HomePage()[pri:0, instance:testdomain.HomePageTest@41e36e46]" name="HomePage" class="testdomain.HomePageTest"/>
+        <method signature="LoginTest.Login()[pri:0, instance:testdomain.LoginTest@636be97c]" name="Login" class="testdomain.LoginTest"/>
       </group> <!-- Smoke -->
     </groups>
-    <test started-at="2024-07-24T21:50:42 IST" name="Smoke Tests" finished-at="2024-07-24T21:50:50 IST" duration-ms="7727">
-      <class name="testdomain.LoginTest">
-        <test-method is-config="true" signature="startBrowser(java.lang.String,java.lang.String)[pri:0, instance:testdomain.LoginTest@1139b2f3]" started-at="2024-07-24T21:50:42 IST" name="startBrowser" finished-at="2024-07-24T21:50:50 IST" duration-ms="7667" status="PASS">
+    <test started-at="2024-07-25T11:12:08 IST" name="Smoke Tests" finished-at="2024-07-25T11:12:33 IST" duration-ms="24868">
+      <class name="testdomain.HomePageTest">
+        <test-method is-config="true" signature="startBrowser(java.lang.String,java.lang.String)[pri:0, instance:testdomain.HomePageTest@41e36e46]" started-at="2024-07-25T11:12:22 IST" name="startBrowser" finished-at="2024-07-25T11:12:26 IST" duration-ms="4219" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -26,10 +27,40 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startBrowser -->
-        <test-method signature="Login()[pri:0, instance:testdomain.LoginTest@1139b2f3]" started-at="2024-07-24T21:50:50 IST" name="Login" finished-at="2024-07-24T21:50:50 IST" duration-ms="3" status="PASS">
+        <test-method signature="HomePage()[pri:0, instance:testdomain.HomePageTest@41e36e46]" started-at="2024-07-25T11:12:26 IST" name="HomePage" finished-at="2024-07-25T11:12:32 IST" duration-ms="6197" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HomePage -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testdomain.HomePageTest@41e36e46]" started-at="2024-07-25T11:12:32 IST" name="closeBrowser" finished-at="2024-07-25T11:12:33 IST" duration-ms="550" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- testdomain.HomePageTest -->
+      <class name="testdomain.LoginTest">
+        <test-method is-config="true" signature="startBrowser(java.lang.String,java.lang.String)[pri:0, instance:testdomain.LoginTest@636be97c]" started-at="2024-07-25T11:12:08 IST" name="startBrowser" finished-at="2024-07-25T11:12:15 IST" duration-ms="7249" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[qa]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startBrowser -->
+        <test-method signature="Login()[pri:0, instance:testdomain.LoginTest@636be97c]" started-at="2024-07-25T11:12:15 IST" name="Login" finished-at="2024-07-25T11:12:21 IST" duration-ms="5674" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testdomain.LoginTest@636be97c]" started-at="2024-07-25T11:12:21 IST" name="closeBrowser" finished-at="2024-07-25T11:12:22 IST" duration-ms="905" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
       </class> <!-- testdomain.LoginTest -->
     </test> <!-- Smoke Tests -->
   </suite> <!-- testdomain -->

@@ -1,15 +1,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="devdomain">
 	<test name="Smoke Tests">
-		<parameter name="env" value="qa" />
+		<parameter name="env" value="dev" />
+		<parameter name="browser" value="chrome" />
 		<groups>
 			<run>
 				<include name="Smoke" />
 			</run>
 		</groups>
 		<classes>
-			<class name="devdomain.DevDomainTest" />
-			<class name="devdomain.DevDomainTest2" />
+			<class name="devdomain.ErpHomePageTest" />
 		</classes>
 	</test>
 </suite>

@@ -15,11 +15,11 @@ public class HomePageTest extends Base {
     public void startBrowser(String env, String browser) {
         environment = new Environment(env);
         driver = getDriver(environment.getUrl(), browser);
-        Login login=new Login(driver);
-        login.login(environment.getPersonalNumber(),environment.getPassword());
     }
     @Test(groups = {"Smoke"})
     public void HomePage(){
+        Login login=new Login(driver);
+        login.login(environment.getPersonalNumber(),environment.getPassword());
         HomePage homePage=new HomePage(driver);
         homePage.homePage();
     }

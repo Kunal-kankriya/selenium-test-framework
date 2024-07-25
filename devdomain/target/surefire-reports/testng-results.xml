@@ -1,41 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="6" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-24T21:50:53 IST" name="devdomain" finished-at="2024-07-24T21:50:53 IST" duration-ms="66">
+  <suite started-at="2024-07-25T11:12:37 IST" name="devdomain" finished-at="2024-07-25T11:15:30 IST" duration-ms="173077">
     <groups>
-      <group name="Regression">
-        <method signature="DevDomainTest.testMethod3()[pri:0, instance:devdomain.DevDomainTest@1622f1b]" name="testMethod3" class="devdomain.DevDomainTest"/>
-        <method signature="DevDomainTest2.testMethod3()[pri:0, instance:devdomain.DevDomainTest2@4b0b0854]" name="testMethod3" class="devdomain.DevDomainTest2"/>
-      </group> <!-- Regression -->
       <group name="Smoke">
-        <method signature="DevDomainTest.testMethod1()[pri:0, instance:devdomain.DevDomainTest@1622f1b]" name="testMethod1" class="devdomain.DevDomainTest"/>
-        <method signature="DevDomainTest.testMethod3()[pri:0, instance:devdomain.DevDomainTest@1622f1b]" name="testMethod3" class="devdomain.DevDomainTest"/>
-        <method signature="DevDomainTest2.testMethod1()[pri:0, instance:devdomain.DevDomainTest2@4b0b0854]" name="testMethod1" class="devdomain.DevDomainTest2"/>
-        <method signature="DevDomainTest2.testMethod3()[pri:0, instance:devdomain.DevDomainTest2@4b0b0854]" name="testMethod3" class="devdomain.DevDomainTest2"/>
+        <method signature="ErpHomePageTest.erpHomePage()[pri:0, instance:devdomain.ErpHomePageTest@1139b2f3]" name="erpHomePage" class="devdomain.ErpHomePageTest"/>
       </group> <!-- Smoke -->
     </groups>
-    <test started-at="2024-07-24T21:50:53 IST" name="Smoke Tests" finished-at="2024-07-24T21:50:53 IST" duration-ms="66">
-      <class name="devdomain.DevDomainTest">
-        <test-method signature="testMethod1()[pri:0, instance:devdomain.DevDomainTest@1622f1b]" started-at="2024-07-24T21:50:53 IST" name="testMethod1" finished-at="2024-07-24T21:50:53 IST" duration-ms="6" status="PASS">
+    <test started-at="2024-07-25T11:12:37 IST" name="Smoke Tests" finished-at="2024-07-25T11:15:30 IST" duration-ms="173077">
+      <class name="devdomain.ErpHomePageTest">
+        <test-method is-config="true" signature="startBrowser(java.lang.String,java.lang.String)[pri:0, instance:devdomain.ErpHomePageTest@1139b2f3]" started-at="2024-07-25T11:12:37 IST" name="startBrowser" finished-at="2024-07-25T11:12:44 IST" duration-ms="6994" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[dev]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testMethod1 -->
-        <test-method signature="testMethod3()[pri:0, instance:devdomain.DevDomainTest@1622f1b]" started-at="2024-07-24T21:50:53 IST" name="testMethod3" finished-at="2024-07-24T21:50:53 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- startBrowser -->
+        <test-method signature="erpHomePage()[pri:0, instance:devdomain.ErpHomePageTest@1139b2f3]" started-at="2024-07-25T11:12:44 IST" name="erpHomePage" finished-at="2024-07-25T11:15:30 IST" duration-ms="165997" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testMethod3 -->
-      </class> <!-- devdomain.DevDomainTest -->
-      <class name="devdomain.DevDomainTest2">
-        <test-method signature="testMethod1()[pri:0, instance:devdomain.DevDomainTest2@4b0b0854]" started-at="2024-07-24T21:50:53 IST" name="testMethod1" finished-at="2024-07-24T21:50:53 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testMethod1 -->
-        <test-method signature="testMethod3()[pri:0, instance:devdomain.DevDomainTest2@4b0b0854]" started-at="2024-07-24T21:50:53 IST" name="testMethod3" finished-at="2024-07-24T21:50:53 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testMethod3 -->
-      </class> <!-- devdomain.DevDomainTest2 -->
+        </test-method> <!-- erpHomePage -->
+      </class> <!-- devdomain.ErpHomePageTest -->
     </test> <!-- Smoke Tests -->
   </suite> <!-- devdomain -->
 </testng-results>

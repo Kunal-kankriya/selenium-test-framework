@@ -5,7 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import java.time.Duration;
 
 public class Login {
     private WebDriver driver;
@@ -30,12 +34,17 @@ public void enterPersonalNumber(String number) {
 public void enterPassword(String pwd) {
 
     Assert.assertTrue(password.isDisplayed());password.sendKeys(pwd);
+    try {
+        Thread.sleep(2000);
+    } catch (InterruptedException e) {
+        throw new RuntimeException(e);
+    }
 }
 
 // Method to click the login button
 public void clickLoginButton() {
-    Assert.assertTrue(loginButton.isEnabled());
-    loginButton.click();
+    WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
+    wait.until(ExpectedConditions.elementToBeClickable(loginButton)).click();
     Assert.assertEquals(driver.getCurrentUrl(),"http://13.126.60.8:8080/bms/dashboard");
 }
 
