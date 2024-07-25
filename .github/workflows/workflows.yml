@@ -30,8 +30,8 @@ jobs:
             mkdir -p artifacts/devdomain
             
             # Copy HTML reports from devdomain/Report (adjust path as necessary)
-            if (Test-Path "Report") {
-              Copy-Item -Path "Report/*.html" -Destination "artifacts/devdomain/"
+            if (Test-Path "devdomain/Report") {
+              Copy-Item -Path "devdomain/Report/*.html" -Destination "artifacts/devdomain/"
             }
 
       - name: Upload Artifacts for devdomain
@@ -64,8 +64,8 @@ jobs:
             mkdir -p artifacts/devdomain
             
             # Copy HTML reports from testdomain/Report (adjust path as necessary)
-            if (Test-Path "/Report") {
-              Copy-Item -Path "/Report/*.html" -Destination "artifacts/testdomain/"
+            if (Test-Path "testdomain/Report") {
+              Copy-Item -Path "testdomain/Report/*.html" -Destination "artifacts/testdomain/"
             }
 
       - name: Upload Artifacts for testdomain
