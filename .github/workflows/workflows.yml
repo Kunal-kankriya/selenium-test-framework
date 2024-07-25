@@ -6,10 +6,9 @@ on:
       - selenium-framework
 
 jobs:
-  build:
-    runs-on: windows-latest  # Use windows-latest for Windows environment
   devdomain:
-    runs-on: windows-latest
+    runs-on: windows-latest  # Use windows-latest for Windows environment
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -20,30 +19,29 @@ jobs:
       - name: Install Google Chrome
         run: choco install googlechrome --ignore-checksums
 
-      - name: Run tests
+      - name: Run tests for devdomain
         run: |
+          cd devdomain
           mvn clean -fae test
-          
-          # Example: Generate artifacts for each domain's report directory
-      - name: Generate and Upload Artifacts
-        run: |
-              mkdir -p artifacts
-          
-              
-              if [ -d "devdomain/Report" ]; then
-              mkdir -p artifacts/devdomain
-              cp devdomain/Report/*.html artifacts/devdomain/
-              fi
-          
 
-              # Upload artifacts
-              - name: Upload Artifacts
-                uses: actions/upload-artifact@v2
-                with:
-                  name: domain-reports
-                  path: artifacts/
+      - name: Generate and Upload Artifacts for devdomain
+        run: |
+          mkdir -p artifacts/devdomain
+          
+          # Copy HTML reports from devdomain/Report (adjust path as necessary)
+          if [ -d "devdomain/Report" ]; then
+            cp devdomain/Report/*.html artifacts/devdomain/
+          fi
+
+      - name: Upload Artifacts for devdomain
+        uses: actions/upload-artifact@v2
+        with:
+          name: devdomain-reports
+          path: artifacts/devdomain/
+
   testdomain:
-    runs-on: windows-latest
+    runs-on: windows-latest  # Use windows-latest for Windows environment
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -54,25 +52,22 @@ jobs:
       - name: Install Google Chrome
         run: choco install googlechrome --ignore-checksums
 
-      - name: Run tests
+      - name: Run tests for testdomain
         run: |
           cd testdomain
           mvn clean -fae test
 
-          # Example: Generate artifacts for each domain's report directory
-      - name: Generate and Upload Artifacts
+      - name: Generate and Upload Artifacts for testdomain
         run: |
-          mkdir -p artifacts
-          
-          # Copy HTML reports from testdomain
-          if [ -d "testdomain/Report" ]; then
           mkdir -p artifacts/testdomain
-          cp testdomain/Report/*.html artifacts/testdomain/
-          fi
           
-          # Upload artifacts
-          - name: Upload Artifacts
-            uses: actions/upload-artifact@v2
-            with:
-              name: domain-reports
-              path: artifacts/
+          # Copy HTML reports from testdomain/Report (adjust path as necessary)
+          if [ -d "testdomain/Report" ]; then
+            cp testdomain/Report/*.html artifacts/testdomain/
+          fi
+
+      - name: Upload Artifacts for testdomain
+        uses: actions/upload-artifact@v2
+        with:
+          name: testdomain-reports
+          path: artifacts/testdomain/
