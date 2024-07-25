@@ -22,7 +22,8 @@ jobs:
       - name: Run tests for devdomain
         run: |
           cd devdomain
-          mvn clean -fae test
+          mvn clean install -DskipTests
+          mvn -fae test
 
       - name: Generate and Upload Artifacts for devdomain
         run: |
@@ -55,7 +56,8 @@ jobs:
       - name: Run tests for testdomain
         run: |
           cd testdomain
-          mvn clean -fae test
+          mvn clean install -DskipTests
+          mvn -fae test
 
       - name: Generate and Upload Artifacts for testdomain
         run: |

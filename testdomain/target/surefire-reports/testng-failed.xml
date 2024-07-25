@@ -20,6 +20,16 @@
           <include name="closeBrowser"/>
         </methods>
       </class> <!-- testdomain.LoginTest -->
+      <class name="testdomain.HomePageTest">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterSuite"/>
+          <include name="beforeSuite"/>
+          <include name="HomePage"/>
+          <include name="startBrowser"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- testdomain.HomePageTest -->
     </classes>
   </test> <!-- Smoke Tests(failed) -->
 </suite> <!-- Failed suite [testdomain] -->
