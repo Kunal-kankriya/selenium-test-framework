@@ -1,0 +1,11 @@
+/testdomain/screenshots
+/testdomain/Report
+
+#Direcory from devdomain
+/devdomain/screenshots
+/devdomain/Report
+
+*.class
+/devdomain/target
+/testdomain/target
+.idea

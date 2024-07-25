@@ -25,7 +25,6 @@ public class LoginTest extends Base {
         test.log(Status.INFO,"Login Started");
         login.login(environment.getPersonalNumber(),environment.getPassword());
         test.log(Status.PASS,"Logged In");
-        Assert.fail();
         test.pass("Test Passed");
     }
     @AfterClass(alwaysRun = true)
