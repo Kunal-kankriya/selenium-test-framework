@@ -8,7 +8,8 @@ on:
 jobs:
   build:
     runs-on: windows-latest  # Use windows-latest for Windows environment
-
+  devdomain:
+    runs-on: windows-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -34,11 +35,6 @@ jobs:
               cp devdomain/Report/*.html artifacts/devdomain/
               fi
           
-              # Copy HTML reports from testdomain
-              if [ -d "testdomain/Report" ]; then
-              mkdir -p artifacts/testdomain
-              cp testdomain/Report/*.html artifacts/testdomain/
-              fi
 
               # Upload artifacts
               - name: Upload Artifacts
@@ -46,3 +42,37 @@ jobs:
                 with:
                   name: domain-reports
                   path: artifacts/
+  testdomain:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Clear Chocolatey cache
+        run: choco cache clean --all
+
+      - name: Install Google Chrome
+        run: choco install googlechrome --ignore-checksums
+
+      - name: Run tests
+        run: |
+          cd testdomain
+          mvn clean -fae test
+
+          # Example: Generate artifacts for each domain's report directory
+      - name: Generate and Upload Artifacts
+        run: |
+          mkdir -p artifacts
+          
+          # Copy HTML reports from testdomain
+          if [ -d "testdomain/Report" ]; then
+          mkdir -p artifacts/testdomain
+          cp testdomain/Report/*.html artifacts/testdomain/
+          fi
+          
+          # Upload artifacts
+          - name: Upload Artifacts
+            uses: actions/upload-artifact@v2
+            with:
+              name: domain-reports
+              path: artifacts/
