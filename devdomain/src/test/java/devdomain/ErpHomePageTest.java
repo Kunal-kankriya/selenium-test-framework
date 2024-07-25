@@ -1,5 +1,6 @@
 package devdomain;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -21,5 +22,9 @@ public class ErpHomePageTest extends Base {
         ErpHomePage erpHomePage=new ErpHomePage(driver);
         erpHomePage.erpHome();
         test.pass("Test Passed");
+    }
+    @AfterClass(alwaysRun = true)
+    public void closeBrowser(){
+        driver.close();
     }
 }

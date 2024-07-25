@@ -1,5 +1,6 @@
 utils\ExcelUtils.class
 utils\Environment.class
+utils\Screenshot.class
 utils\Base.class
 utils\CustomException.class
 utils\Report.class
