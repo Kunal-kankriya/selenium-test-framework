@@ -1,5 +1,7 @@
 package testdomain;
 
+import com.aventstack.extentreports.Status;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -18,8 +20,13 @@ public class LoginTest extends Base {
 
     @Test(groups = {"Smoke"})
     public void Login() {
+        test.info("Test Started : ");
         Login login = new Login(driver);
+        test.log(Status.INFO,"Login Started");
         login.login(environment.getPersonalNumber(),environment.getPassword());
+        test.log(Status.PASS,"Logged In");
+        Assert.fail();
+        test.pass("Test Passed");
     }
     @AfterClass(alwaysRun = true)
     public void closeBrowser(){

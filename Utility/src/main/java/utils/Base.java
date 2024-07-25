@@ -2,6 +2,7 @@ package utils;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.poi.ss.formula.atp.Switch;
@@ -14,27 +15,31 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
+import java.awt.*;
 import java.time.Duration;
 
 public class Base {
     protected ExtentReports extent;
     protected static ExtentTest test;
     public static WebDriver driver;
-    @BeforeSuite(alwaysRun = false)
+    @BeforeSuite(alwaysRun = true)
     public void beforeSuite() {
         String reportPath = System.getProperty("user.dir") + "/Report/ExtentReport.html";
         extent = Report.getInstance(reportPath,"Execution Report","Report Name");
+        test = extent.createTest(getClass().getSimpleName());
     }
     @BeforeMethod(alwaysRun = false)
     public void beforeMethod() {
-        test = extent.createTest(getClass().getSimpleName());
+
     }
 
-    @AfterMethod(alwaysRun = false)
+    @AfterMethod(alwaysRun = true)
     public void afterMethod(ITestResult result) {
         if (result.getStatus() == ITestResult.FAILURE) {
+            String screenshotPath=Screenshot.getScreenshot(driver,result.getName());
             test.log(Status.FAIL, "Test Case Failed: " + result.getName());
-            test.log(Status.FAIL, "Exception: " + result.getThrowable());
+            test.fail(MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+            test.log(Status.FAIL, "Exception: " + result.getThrowable().getStackTrace());
         } else if (result.getStatus() == ITestResult.SUCCESS) {
             test.log(Status.PASS, "Test Case Passed: " + result.getName());
         } else if (result.getStatus() == ITestResult.SKIP) {
@@ -73,6 +78,10 @@ public class Base {
         }
 
         return driver;
+    }
+    @AfterSuite(alwaysRun = true)
+    public void afterSuite() {
+        extent.flush();
     }
 
 }

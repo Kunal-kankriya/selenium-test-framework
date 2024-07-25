@@ -1,5 +1,6 @@
 package testdomain;
 
+import com.aventstack.extentreports.Status;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -18,10 +19,15 @@ public class HomePageTest extends Base {
     }
     @Test(groups = {"Smoke"})
     public void HomePage(){
+        test.info("Test Started : ");
         Login login=new Login(driver);
+        test.log(Status.INFO,"Login Started");
         login.login(environment.getPersonalNumber(),environment.getPassword());
+        test.log(Status.INFO,"Logged In");
         HomePage homePage=new HomePage(driver);
+        test.info("Home Page Test Started : ");
         homePage.homePage();
+        test.info("Home Page Test Passed : ");
     }
     @AfterClass(alwaysRun = true)
     public void closeBrowser(){

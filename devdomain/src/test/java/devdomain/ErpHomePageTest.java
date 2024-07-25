@@ -17,7 +17,9 @@ public class ErpHomePageTest extends Base {
 
     @Test(groups = {"Smoke"})
     public void erpHomePage(){
+        test.info("Test Started : ");
         ErpHomePage erpHomePage=new ErpHomePage(driver);
         erpHomePage.erpHome();
+        test.pass("Test Passed");
     }
 }

@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Report Name</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jul 24, 2024 01:32:52 PM</span></a>
+<a href="#"><span class="badge badge-primary">Jul 25, 2024 01:32:00 PM</span></a>
 </li>
 </ul>
 </div>
@@ -66,7 +66,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -74,25 +74,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">TestDomainTest</p>
+            <p class="name">LoginTest</p>
             <p class="text-sm">
-              <span>1:32:53 PM</span> / <span>00:00:00:020</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>1:32:00 PM</span> / <span>00:00:28:048</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">TestDomainTest</h5>
-<span class='badge badge-success'>07.24.2024 1:32:53 PM</span>
-<span class='badge badge-danger'>07.24.2024 1:32:53 PM</span>
-<span class='badge badge-default'>00:00:00:020</span>
+<h5 class="test-status text-fail">LoginTest</h5>
+<span class='badge badge-success'>07.25.2024 1:32:00 PM</span>
+<span class='badge badge-danger'>07.25.2024 1:32:28 PM</span>
+<span class='badge badge-default'>00:00:28:048</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -104,77 +104,90 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:32:53 PM</td>
+        <td>1:32:08 PM</td>
         <td>
-          Starting Smoke Test
+          Test Started : 
         </td>
       </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>1:32:53 PM</td>
-        <td>
-          Test passed
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>1:32:53 PM</td>
-        <td>
-          Test Case Passed: testMethod1
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="2"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">TestDomainTest</p>
-            <p class="text-sm">
-              <span>1:32:53 PM</span> / <span>00:00:00:004</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">TestDomainTest</h5>
-<span class='badge badge-success'>07.24.2024 1:32:53 PM</span>
-<span class='badge badge-danger'>07.24.2024 1:32:53 PM</span>
-<span class='badge badge-default'>00:00:00:004</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>1:32:53 PM</td>
+        <td>1:32:08 PM</td>
         <td>
-          Starting Smoke & Regressiom
+          Login Started
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>1:32:53 PM</td>
+        <td>1:32:13 PM</td>
         <td>
-          Test passed
+          Logged In
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>1:32:13 PM</td>
+        <td>
+          Test Case Failed: Login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>1:32:13 PM</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\demo\mainproject\testdomain/screenshots/Login_1721894533662.png' src="D:\demo\mainproject\testdomain/screenshots/Login_1721894533662.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>1:32:13 PM</td>
+        <td>
+          Exception: java.lang.AssertionError: null
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:32:22 PM</td>
+        <td>
+          Test Started : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:32:22 PM</td>
+        <td>
+          Login Started
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:32:27 PM</td>
+        <td>
+          Logged In
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:32:27 PM</td>
+        <td>
+          Home Page Test Started : 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>1:32:28 PM</td>
+        <td>
+          Home Page Test Passed : 
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>1:32:53 PM</td>
+        <td>1:32:28 PM</td>
         <td>
-          Test Case Passed: testMethod3
+          Test Case Passed: HomePage
         </td>
       </tr>
   </tbody>
@@ -196,25 +209,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jul 24, 2024 01:32:52 PM</h3>
+<h3>Jul 25, 2024 01:32:00 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jul 24, 2024 01:32:53 PM</h3>
+<h3>Jul 25, 2024 01:32:29 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>2</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -230,12 +243,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>2</b> tests passed
+<div><small data-tooltip='0%'>
+<b>0</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
+<small data-tooltip='100%'><b>1</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -253,10 +266,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='66%'><b>4</b> events passed</small></div>
+<div><small data-tooltip='16%'><b>2</b> events passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>2</b> others
+<small data-tooltip='25%'><b>3</b> events failed,
+<b data-tooltip='%'>7</b> others
 </small>
 </div>
 </div>
@@ -272,7 +285,7 @@
 </div></div>
 <script>
 var timeline = {
-"TestDomainTest":0.02,"TestDomainTest":0.004
+"LoginTest":28.048
 };
 </script>
 <div class="row">
@@ -281,8 +294,8 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 2,
-failParent: 0,
+passParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -298,11 +311,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 4,
-failEvents: 0,
+passEvents: 2,
+failEvents: 3,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 2
+infoEvents: 7
 };
 </script>        </div>
       </div>
