@@ -22,3 +22,27 @@ jobs:
       - name: Run tests
         run: |
           mvn clean -fae test
+          
+          # Example: Generate artifacts for each domain's report directory
+      - name: Generate and Upload Artifacts
+        run: |
+              mkdir -p artifacts
+          
+              
+              if [ -d "devdomain/Report" ]; then
+              mkdir -p artifacts/devdomain
+              cp devdomain/Report/*.html artifacts/devdomain/
+              fi
+          
+              # Copy HTML reports from testdomain
+              if [ -d "testdomain/Report" ]; then
+              mkdir -p artifacts/testdomain
+              cp testdomain/Report/*.html artifacts/testdomain/
+              fi
+
+              # Upload artifacts
+              - name: Upload Artifacts
+                uses: actions/upload-artifact@v2
+                with:
+                  name: domain-reports
+                  path: artifacts/
