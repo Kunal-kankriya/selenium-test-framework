@@ -84,4 +84,11 @@ public class Base {
         extent.flush();
     }
 
+    public static void sleep(int seconds){
+        try {
+            Thread.sleep(seconds);
+        }catch (Exception e){
+
+        }
+    }
 }

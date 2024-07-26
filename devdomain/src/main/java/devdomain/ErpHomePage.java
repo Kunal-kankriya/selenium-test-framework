@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.Base;
 
 import java.time.Duration;
 
@@ -25,29 +26,31 @@ public class ErpHomePage {
 
     // Method to click on Contact Us link
     public void clickContactUs() {
-        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.invisibilityOf(overlay));
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(contactUS)).click();
+       // wait.until(ExpectedConditions.invisibilityOf(overlay));
+        Base.sleep(2000);
     }
 
     // Method to click on ERP Home link
     public void clickErpHome() {
-       WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.invisibilityOf(overlay));
+       WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(erpHome)).click();
+       // wait.until(ExpectedConditions.invisibilityOf(overlay));
+        Base.sleep(2000);
     }
 
     // Method to click on Request Demo link
     public void clickRequestDemo() {
-        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.invisibilityOf(overlay));
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(requestDemo)).click();
+        //wait.until(ExpectedConditions.invisibilityOf(overlay));
+        Base.sleep(2000);
     }
 
     // Method to click on Partner link
     public void clickPartner() {
-        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.invisibilityOf(overlay));
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(partner)).click();
     }
 

@@ -75,6 +75,8 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>${basedir}/testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
+					<parallel>methods</parallel>
+					<threadCount>1</threadCount>
 				</configuration>
 			</plugin>
 		</plugins>
