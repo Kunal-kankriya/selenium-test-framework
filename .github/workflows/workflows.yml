@@ -59,9 +59,9 @@ jobs:
           cd testdomain
           mvn -fae test
 
-      - name: Generate and Upload Artifacts for devdomain
+      - name: Generate and Upload Artifacts for testdomain
         run: |
-            mkdir -p artifacts/devdomain
+            mkdir -p artifacts/testdomain
             
             # Copy HTML reports from testdomain/Report (adjust path as necessary)
             if (Test-Path "testdomain/Report") {
