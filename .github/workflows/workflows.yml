@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Clear Chocolatey cache
         run: choco cache clean --all
@@ -36,7 +36,7 @@ jobs:
             }
 
       - name: Upload Artifacts for devdomain
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: devdomain-reports
           path: artifacts/devdomain/
@@ -60,7 +60,7 @@ jobs:
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Clear Chocolatey cache
         run: choco cache clean --all
@@ -84,7 +84,7 @@ jobs:
             }
 
       - name: Upload Artifacts for testdomain
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: testdomain-reports
           path: artifacts/testdomain/
