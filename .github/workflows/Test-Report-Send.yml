@@ -16,17 +16,12 @@ jobs:
         run: |
           mvn clean install -DskipTests
           cd devdomain
-          mvn -fae test
+          mvn --batch-mode --update-snapshots verify
 
       - name: Generate and Upload Artifacts for devdomain
         run: |
             mkdir -p artifacts/devdomain
-            
-            # Copy HTML reports from devdomain/Report (adjust path as necessary)
-            if (Test-Path "devdomain/Report") {
-              cp -rv devdomain/Report/*.html artifacts/devdomain/
-            }
-
+            cp target/*.jar artifacts/devdomain
       - name: Upload Artifacts for devdomain
         uses: actions/upload-artifact@v2
         with:
