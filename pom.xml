@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project
-		xmlns="http://maven.apache.org/POM/4.0.0"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns="http://maven.apache.org/POM/4.0.0"
 		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>main-project</groupId>
@@ -13,23 +13,23 @@
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<parent.basedir>${project.basedir}</parent.basedir>
+		<rootDirectory>${basedir}</rootDirectory>
 	</properties>
 	<dependencies>
-			<!-- TestNG Dependency -->
-			<dependency>
-				<groupId>org.testng</groupId>
-				<artifactId>testng</artifactId>
-				<version>7.4.0</version>
-				<scope>test</scope>
-			</dependency>
+		<!-- TestNG Dependency -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.4.0</version>
+			<scope>test</scope>
+		</dependency>
 
-			<!-- ExtentReports Dependency -->
-			<dependency>
-				<groupId>com.aventstack</groupId>
-				<artifactId>extentreports</artifactId>
-				<version>5.0.9</version>
-			</dependency>
+		<!-- ExtentReports Dependency -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.0.9</version>
+		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -72,6 +72,12 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
+					<systemPropertyVariables>
+						<property>
+							<name>env</name>
+							<value>${env}</value>
+						</property>
+					</systemPropertyVariables>
 					<suiteXmlFiles>
 						<suiteXmlFile>${basedir}/testng.xml</suiteXmlFile>
 					</suiteXmlFiles>

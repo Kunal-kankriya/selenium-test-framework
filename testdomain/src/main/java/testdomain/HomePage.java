@@ -1,4 +1,5 @@
 package testdomain;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -6,11 +7,16 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
     private WebDriver driver;
-    @FindBy(xpath = "(//button[contains(text(), 'Dashboard 2')])[2]") private WebElement dashboard2;
-    @FindBy(xpath = "(//button[contains(text(), 'Dashboard 1')])[2]") private WebElement dashboard1;
-    @FindBy(xpath = "(//button[contains(text(), 'Dashboard 3')])[2]") private WebElement dashboard3;
-    @FindBy(xpath = "(//button[contains(text(), 'Dashboard 4')])[2]") private WebElement dashboard4;
-    @FindBy(xpath = "(//button[contains(text(), 'Dashboard 5')])[2]") private WebElement dashboard5;
+    @FindBy(xpath = "(//button[contains(text(), 'Dashboard 2')])[2]")
+    private WebElement dashboard2;
+    @FindBy(xpath = "(//button[contains(text(), 'Dashboard 1')])[2]")
+    private WebElement dashboard1;
+    @FindBy(xpath = "(//button[contains(text(), 'Dashboard 3')])[2]")
+    private WebElement dashboard3;
+    @FindBy(xpath = "(//button[contains(text(), 'Dashboard 4')])[2]")
+    private WebElement dashboard4;
+    @FindBy(xpath = "(//button[contains(text(), 'Dashboard 5')])[2]")
+    private WebElement dashboard5;
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -42,7 +48,7 @@ public class HomePage {
         dashboard5.click();
     }
 
-    public void homePage(){
+    public void homePage() {
         clickDashboard1();
         clickDashboard2();
         clickDashboard1();
@@ -52,5 +58,6 @@ public class HomePage {
         clickDashboard1();
         clickDashboard5();
         clickDashboard1();
+        System.out.println("Method invoked");
     }
 }

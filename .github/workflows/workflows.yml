@@ -28,12 +28,12 @@ jobs:
 
       - name: Generate and Upload Artifacts for devdomain
         run: |
-            mkdir -p artifacts/devdomain
-            
-            # Copy HTML reports from devdomain/Report (adjust path as necessary)
-            if (Test-Path "devdomain/Report") {
-              Copy-Item -Path "devdomain/Report/*.html" -Destination "artifacts/devdomain/"
-            }
+          mkdir -p artifacts/devdomain
+          
+          # Copy HTML reports from devdomain/Report (adjust path as necessary)
+          if (Test-Path "devdomain/Report") {
+            Copy-Item -Path "devdomain/Report/*.html" -Destination "artifacts/devdomain/"
+          }
 
       - name: Upload Artifacts for devdomain
         uses: actions/upload-artifact@v4
@@ -76,12 +76,12 @@ jobs:
 
       - name: Generate and Upload Artifacts for testdomain
         run: |
-            mkdir -p artifacts/testdomain
-            
-            # Copy HTML reports from testdomain/Report (adjust path as necessary)
-            if (Test-Path "testdomain/Report") {
-              Copy-Item -Path "testdomain/Report/*.html" -Destination "artifacts/testdomain/"
-            }
+          mkdir -p artifacts/testdomain
+          
+          # Copy HTML reports from testdomain/Report (adjust path as necessary)
+          if (Test-Path "testdomain/Report") {
+            Copy-Item -Path "testdomain/Report/*.html" -Destination "artifacts/testdomain/"
+          }
 
       - name: Upload Artifacts for testdomain
         uses: actions/upload-artifact@v4

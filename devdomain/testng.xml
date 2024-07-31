@@ -1,15 +1,28 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="devdomain">
-	<test name="Smoke Tests">
-		<parameter name="env" value="dev" />
-		<parameter name="browser" value="chrome" />
+<suite name="devdomain" parallel="tests" thread-count="4">
+	<listeners>
+		<listener class-name="utils.ExtentReportListener"/>
+	</listeners>
+	<test name="Smoke Tests On Chrome Browser">
+		<parameter name="browser" value="chrome"/>
 		<groups>
 			<run>
-				<include name="Smoke" />
+				<include name="Regression"/>
 			</run>
 		</groups>
 		<classes>
-			<class name="devdomain.ErpHomePageTest" />
+			<class name="devdomain.ErpHomePageTest"/>
+		</classes>
+	</test>
+	<test name="Smoke Test on FireFox Browser">
+		<parameter name="browser" value="firefox"/>
+		<groups>
+			<run>
+				<include name="Regression"/>
+			</run>
+		</groups>
+		<classes>
+			<class name="devdomain.ErpHomePageTest"/>
 		</classes>
 	</test>
 </suite>

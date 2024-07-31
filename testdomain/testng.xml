@@ -1,16 +1,18 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="testdomain">
+<suite name="Smoke">
+	<listeners>
+		<listener class-name="utils.ExtentReportListener"/>
+	</listeners>
 	<test name="Smoke Tests">
-		<parameter name="env" value="qa" />
-		<parameter name="browser" value="chrome" />
+		<parameter name="browser" value="chrome"/>
 		<groups>
 			<run>
-				<include name="Smoke" />
+				<include name="Smoke"/>
 			</run>
 		</groups>
 		<classes>
-			<class name="testdomain.LoginTest" />
-			<class name="testdomain.HomePageTest" />
+			<class name="testdomain.LoginTest"/>
+			<class name="testdomain.HomePageNewTest"/>
 		</classes>
 	</test>
 </suite>
