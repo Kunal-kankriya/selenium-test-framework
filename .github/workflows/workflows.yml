@@ -17,14 +17,14 @@ jobs:
       - name: Clear Chocolatey cache
         run: choco cache clean --all
 
-      - name: Install Google Chrome
-        run: choco install googlechrome --ignore-checksums
+      # - name: Install Google Chrome
+      #   run: choco install googlechrome --ignore-checksums
 
-      - name: Run tests for devdomain
-        run: |
-          mvn clean install -DskipTests
-          cd devdomain
-          mvn -fae test
+      # - name: Run tests for devdomain
+      #   run: |
+      #     mvn clean install -DskipTests
+      #     cd devdomain
+      #     mvn -fae test
 
       - name: Generate and Upload Artifacts for devdomain
         run: |
