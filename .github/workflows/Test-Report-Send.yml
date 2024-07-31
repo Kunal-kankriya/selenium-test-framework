@@ -1,0 +1,71 @@
+name: Sending Test Report
+on:
+  workflow_dispatch: 
+
+jobs:
+  devdomain:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pulling code from required branch
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Install Google Chrome
+        run: choco install googlechrome --ignore-checksums
+
+      - name: Run tests for devdomain
+        run: |
+          mvn clean install -DskipTests
+          cd devdomain
+          mvn -fae test
+
+      - name: Generate and Upload Artifacts for devdomain
+        run: |
+            mkdir -p artifacts/devdomain
+            
+            # Copy HTML reports from devdomain/Report (adjust path as necessary)
+            if (Test-Path "devdomain/Report") {
+              cp -rv devdomain/Report/*.html artifacts/devdomain/
+            }
+
+      - name: Upload Artifacts for devdomain
+        uses: actions/upload-artifact@v2
+        with:
+          name: devdomain-reports
+          path: artifacts/devdomain/
+
+  # testdomain:
+  #   runs-on: windows-latest  # Use windows-latest for Windows environment
+
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v2
+
+  #     - name: Clear Chocolatey cache
+  #       run: choco cache clean --all
+
+  #     - name: Install Google Chrome
+  #       run: choco install googlechrome --ignore-checksums
+
+  #     - name: Run tests for testdomain
+  #       run: |
+  #         mvn clean install -DskipTests
+  #         cd testdomain
+  #         mvn -fae test
+
+  #     - name: Generate and Upload Artifacts for testdomain
+  #       run: |
+  #           mkdir -p artifacts/testdomain
+            
+  #           # Copy HTML reports from testdomain/Report (adjust path as necessary)
+  #           if (Test-Path "testdomain/Report") {
+  #             Copy-Item -Path "testdomain/Report/*.html" -Destination "artifacts/testdomain/"
+  #           }
+
+  #     - name: Upload Artifacts for testdomain
+  #       uses: actions/upload-artifact@v2
+  #       with:
+  #         name: testdomain-reports
+  #         path: artifacts/testdomain/
