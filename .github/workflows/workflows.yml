@@ -55,36 +55,50 @@ jobs:
           body: Please find attachment of devdomain test report
           attachments: artifacts/devdomain/*
 
-  # testdomain:
-  #   runs-on: windows-latest  
+  testdomain:
+    runs-on: windows-latest  
     
-  #   steps:
-  #     - name: Checkout code
-  #       uses: actions/checkout@v2
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-  #     - name: Clear Chocolatey cache
-  #       run: choco cache clean --all
+      - name: Clear Chocolatey cache
+        run: choco cache clean --all
 
-  #     - name: Install Google Chrome
-  #       run: choco install googlechrome --ignore-checksums
+      - name: Install Google Chrome
+        run: choco install googlechrome --ignore-checksums
 
-  #     - name: Run tests for testdomain
-  #       run: |
-  #         mvn clean install -DskipTests
-  #         cd testdomain
-  #         mvn -fae test
+      - name: Run tests for testdomain
+        run: |
+          mvn clean install -DskipTests
+          cd testdomain
+          mvn -fae test
 
-  #     - name: Generate and Upload Artifacts for testdomain
-  #       run: |
-  #           mkdir -p artifacts/testdomain
+      - name: Generate and Upload Artifacts for testdomain
+        run: |
+            mkdir -p artifacts/testdomain
             
-  #           # Copy HTML reports from testdomain/Report (adjust path as necessary)
-  #           if (Test-Path "testdomain/Report") {
-  #             Copy-Item -Path "testdomain/Report/*.html" -Destination "artifacts/testdomain/"
-  #           }
+            # Copy HTML reports from testdomain/Report (adjust path as necessary)
+            if (Test-Path "testdomain/Report") {
+              Copy-Item -Path "testdomain/Report/*.html" -Destination "artifacts/testdomain/"
+            }
 
-  #     - name: Upload Artifacts for testdomain
-  #       uses: actions/upload-artifact@v2
-  #       with:
-  #         name: testdomain-reports
-  #         path: artifacts/testdomain/
+      - name: Upload Artifacts for testdomain
+        uses: actions/upload-artifact@v2
+        with:
+          name: testdomain-reports
+          path: artifacts/testdomain/
+      
+      - name: Send mail
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          subject: testdomain Test Report
+          to: akshay.sawant@apptware.com,kunal.kankriya@apptware.com
+          from: Testing Team
+          body: Please find attachment of testdomain test report
+          attachments: artifacts/testdomain/*
