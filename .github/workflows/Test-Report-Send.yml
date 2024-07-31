@@ -12,9 +12,6 @@ jobs:
         with:
           ref: selenium-framework
 
-      - name: Install Google Chrome
-        run: choco install googlechrome --ignore-checksums
-
       - name: Run tests for devdomain
         run: |
           mvn clean install -DskipTests
