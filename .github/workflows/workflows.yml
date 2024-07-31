@@ -2,9 +2,9 @@ name: CI/CD Pipeline Test for devdomain
 
 on:
   workflow_dispatch: 
-  # push:
-  #   branches:
-  #     - selenium-framework
+   push:
+     branches:
+       - selenium-framework
 
 jobs:
   devdomain:
