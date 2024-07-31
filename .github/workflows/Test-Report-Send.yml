@@ -10,7 +10,7 @@ jobs:
       - name: Pulling code from required branch
         uses: actions/checkout@v4
         with:
-          ref: master
+          ref: selenium-framework
 
       - name: Install Google Chrome
         run: choco install googlechrome --ignore-checksums
