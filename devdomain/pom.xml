@@ -19,6 +19,12 @@
 			<artifactId>Utility</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.4.0</version>
+			<scope>compile</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -27,9 +33,18 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
+					<systemPropertyVariables>
+						<property>
+							<suite>${suite}</suite> <!-- Use the suite property -->
+							<env>${env}</env>
+						</property>
+					</systemPropertyVariables>
 					<suiteXmlFiles>
-						<suiteXmlFile>${basedir}/testng.xml</suiteXmlFile>
+						<!--suppress UnresolvedMavenProperty -->
+						<suiteXmlFile>${basedir}/suites/${suite}.xml</suiteXmlFile>
 					</suiteXmlFiles>
+					<parallel>methods</parallel>
+					<threadCount>1</threadCount>
 				</configuration>
 			</plugin>
 		</plugins>

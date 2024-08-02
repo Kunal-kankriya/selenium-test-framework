@@ -3,36 +3,52 @@ package utils;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class EnvConfig {
 
-private static Properties properties;
+    private static EnvConfig instance;
+    private Properties properties;
+    private static final String PROPERTIES_FILE = configFilePath(); // Path to your properties file
 
-    public static String getProperty(String property){
-        String env=System.getProperty("env","qa");
-        String pathString=System.getProperty("user.dir");
-        Path path = Paths.get(pathString);
-        Path parentPath = path.getParent();
-        String parentPathString = parentPath.toString();
-        String value="";
-        if(env.equalsIgnoreCase("qa")){
-           parentPathString =parentPathString+"\\src\\main\\resources\\qaConfig.properties";
-        }else if(env.equalsIgnoreCase("dev")){
-            parentPathString =parentPathString+"\\src\\main\\resources\\devConfig.properties";
+    public static String configFilePath() {
+        String env = System.getProperty("env", "qa");
+        String pathString = System.getProperty("user.dir");
+        String parentPathString = "";
+        if (env.equalsIgnoreCase("qa")) {
+            parentPathString = pathString + "\\src\\main\\resources\\qaConfig.properties";
+        } else if (env.equalsIgnoreCase("dev")) {
+            parentPathString = pathString + "\\src\\main\\resources\\devConfig.properties";
         }
-        try{
-            FileInputStream fileInputStream=new FileInputStream(parentPathString);
-            properties=new Properties();
-            properties.load(fileInputStream);
-           value= properties.getProperty(property);
-        }catch (IOException e){
-
-        }
-        return value;
+        return parentPathString;
     }
 
+    private EnvConfig() {
+        properties = new Properties();
+        loadProperties();
+    }
+
+    public static synchronized EnvConfig getInstance() {
+        if (instance == null) {
+            instance = new EnvConfig();
+        }
+        return instance;
+    }
+
+    private void loadProperties() {
+        try (InputStream input = new FileInputStream(PROPERTIES_FILE)) {
+            properties.load(input);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public String getProperty(String key) {
+        return properties.getProperty(key);
+    }
 
 }
+
+
+

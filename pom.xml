@@ -13,7 +13,7 @@
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<rootDirectory>${basedir}</rootDirectory>
+		<suite>default</suite>
 	</properties>
 	<dependencies>
 		<!-- TestNG Dependency -->
@@ -74,8 +74,8 @@
 				<configuration>
 					<systemPropertyVariables>
 						<property>
-							<name>env</name>
-							<value>${env}</value>
+							<suite>${suite}</suite> <!-- Use the suite property -->
+							<env>${env}</env>
 						</property>
 					</systemPropertyVariables>
 					<suiteXmlFiles>

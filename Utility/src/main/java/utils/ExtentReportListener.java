@@ -10,7 +10,7 @@ import org.testng.ITestResult;
 
 public class ExtentReportListener implements ITestListener {
     public static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
-    public ExtentReports extent;
+    public static ExtentReports extent;
 
     public static ExtentTest getTest() {
         return test.get();
@@ -24,7 +24,7 @@ public class ExtentReportListener implements ITestListener {
         ExtentSparkReporter sparkReporter = new ExtentSparkReporter(reportPath + "/Report/" + suiteName + ".html");
         sparkReporter.config().setReportName(suiteName);
         sparkReporter.config().setDocumentTitle(suiteName + " Test Execution Report");
-        sparkReporter.config().setTheme(Theme.DARK);
+        sparkReporter.config().setTheme(Theme.STANDARD);
         extent = new ExtentReports();
         extent.attachReporter(sparkReporter);
     }
@@ -33,7 +33,7 @@ public class ExtentReportListener implements ITestListener {
     public void onTestStart(ITestResult result) {
         ExtentTest extentTest = extent.createTest(result.getMethod().getMethodName());
         test.set(extentTest);
-        test.get().info(result.getTestClass().toString());
+        test.get().info(result.getInstanceName());
     }
 
     @Override
@@ -44,8 +44,8 @@ public class ExtentReportListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         test.get().fail(result.getThrowable());
-        String path = Screenshot.getScreenshot(Base.driver, result.getMethod().getMethodName());
-        test.get().addScreenCaptureFromPath(path);
+       // String path = Screenshot.getScreenshot(driver, result.getMethod().getMethodName());
+       // test.get().addScreenCaptureFromPath(path);
     }
 
     @Override
@@ -60,6 +60,34 @@ public class ExtentReportListener implements ITestListener {
 
     @Override
     public void onFinish(ITestContext context) {
+        int passedTests = context.getPassedTests().size();
+        int failedTests = context.getFailedTests().size();
+        int skippedTests = context.getSkippedTests().size();
+        int totalTests = passedTests + failedTests + skippedTests;
+        String suiteName = context.getSuite().getName();
+
+        double passPercentage = totalTests > 0 ? (double) passedTests / totalTests * 100 : 0;
+
+
+        String summaryHtml = "<h3>Suite Summary</h3>" +
+                "<table border='1' style='width:100%; border-collapse: collapse;'>" +
+                "<tr>" +
+                "<th>Suite Name</th>" +
+                "<th>Pass Tests</th>" +
+                "<th>Fail Tests</th>" +
+                "<th>Skip Tests</th>" +
+                "<th>Pass %</th>" +
+                "</tr>" +
+                "<tr>" +
+                "<td>" + suiteName + "</td>" +
+                "<td>" + passedTests + "</td>" +
+                "<td>" + failedTests + "</td>" +
+                "<td>" + skippedTests + "</td>" +
+                "<td>" + String.format("%.2f", passPercentage) + "%</td>" +
+                "</tr>" +
+                "</table>";
+        ExtentTest summaryTest = extent.createTest("Summary Report");
+        summaryTest.info(summaryHtml);
         extent.flush();
         test.remove();
     }

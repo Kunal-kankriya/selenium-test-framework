@@ -8,6 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import static utils.ExtentReportListener.test;
+
 public class ElementActions extends Base {
     public static final WebElement isElementFound(WebDriver driver, String xpath) {
         WebElement element = null;
@@ -38,7 +40,7 @@ public class ElementActions extends Base {
         }
     }
 
-    public static boolean click(String xpath) {
+    public static boolean click(WebDriver driver,String xpath) {
         WebElement ele = isElementFound(driver, xpath);
         boolean flag = false;
         if (ele != null) {
@@ -47,7 +49,7 @@ public class ElementActions extends Base {
         return flag;
     }
 
-    public static boolean input(String xpath) {
+    public static boolean input(WebDriver driver,String xpath) {
         WebElement ele = isElementFound(driver, xpath);
         boolean flag = false;
         if (ele != null) {
@@ -56,7 +58,7 @@ public class ElementActions extends Base {
         return flag;
     }
 
-    public static void stepRun(ExtentTest test, Row row) {
+    public static void stepRun(ExtentTest test,WebDriver driver, Row row) {
         if (row != null) {
             ExcelUtils excelUtils = new ExcelUtils();
             String locator = excelUtils.getLocator(row);

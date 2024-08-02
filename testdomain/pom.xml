@@ -14,7 +14,7 @@
 	<name>testdomain</name>
 	<url>http://maven.apache.org</url>
 	<properties>
-		<parent.basedir>${project.basedir}</parent.basedir>
+		<suite>default</suite>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -36,9 +36,18 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
+					<systemPropertyVariables>
+						<property>
+							<suite>${suite}</suite> <!-- Use the suite property -->
+							<env>${env}</env>
+						</property>
+					</systemPropertyVariables>
 					<suiteXmlFiles>
-						<suiteXmlFile>${basedir}/testng.xml</suiteXmlFile>
+						<!--suppress UnresolvedMavenProperty -->
+						<suiteXmlFile>${basedir}/suites/${suite}.xml</suiteXmlFile>
 					</suiteXmlFiles>
+					<parallel>methods</parallel>
+					<threadCount>1</threadCount>
 				</configuration>
 			</plugin>
 		</plugins>

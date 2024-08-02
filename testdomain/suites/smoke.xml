@@ -1,9 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Smoke">
+<suite name="smoke suite">
 	<listeners>
 		<listener class-name="utils.ExtentReportListener"/>
 	</listeners>
-	<test name="Smoke Tests">
+	<test name="smoke test">
 		<parameter name="browser" value="chrome"/>
 		<groups>
 			<run>
@@ -12,7 +12,8 @@
 		</groups>
 		<classes>
 			<class name="testdomain.LoginTest"/>
-			<class name="testdomain.HomePageNewTest"/>
+			<class name="testdomain.LoginTest2"/>
+			<class name="testdomain.LoginTest3"/>
 		</classes>
 	</test>
 </suite>

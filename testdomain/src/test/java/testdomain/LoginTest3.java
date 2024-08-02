@@ -2,12 +2,13 @@ package testdomain;
 
 import com.aventstack.extentreports.Status;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import testDomainBase.TestDomainBase;
 
 @Listeners(utils.ExtentReportListener.class)
-public class LoginTest extends TestDomainBase {
+public class LoginTest3 extends TestDomainBase {
 
     @Test(groups = {"Smoke"}, priority = 0)
     public void Login() {
@@ -37,7 +38,8 @@ public class LoginTest extends TestDomainBase {
     @Test(groups = {"Smoke"}, priority = 3, dependsOnMethods = "test2")
     public void test3() {
         test.get().info("Test Started : ");
-        test.get().info("Test method skip 3");
+        test.get().info("Test method pass 3");
+        Assert.fail();
         test.get().pass("Test Passed");
 
     }

@@ -1,5 +1,6 @@
 package devdomain;
 
+import devdomainBase.DevDomainBase;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -7,9 +8,7 @@ import utils.Base;
 import utils.ExtentReportListener;
 
 @Listeners(ExtentReportListener.class)
-public class ErpHomePageTest extends Base {
-
-
+public class ErpHomePageTest extends DevDomainBase {
 
     @Test(groups = {"Smoke"})
     public void erpHomePage() {
